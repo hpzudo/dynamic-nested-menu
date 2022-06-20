@@ -28,4 +28,8 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('.content span')?.textContent).toContain('nested-menu-exercise app is running!');
   });
+
+  it('should increase length by 1 if another root category is added', () => {});
+
+  it('should increase length by 1 if another subcategory is added', () => {});
 });

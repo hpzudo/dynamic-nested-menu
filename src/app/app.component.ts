@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {CategoriesService, NestedCategory} from "./categories.service";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'nested-menu-exercise';
+
+  title = 'Nested Menu';
+
+  constructor(private categoriesService: CategoriesService) {}
+
+  nestedCategories$: Observable<NestedCategory[]> = this.categoriesService.getNestedCategories();
+
 }
